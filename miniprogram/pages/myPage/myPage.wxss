@@ -1,0 +1,30 @@
+/* miniprogram/pages/myPage.wxss */
+page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  margin-top:50px;
+  text-align: center;
+}
+.header text{
+  color:blue;
+  font-size:60rpx;
+  font-style: normal;
+  text-shadow: 1rpx 1rpx 1rpx black;
+}
+.header image{
+  
+}
+.accountArea {
+  margin-top:50px;
+}
+.accountArea view{
+  float:left;
+}
+.accountArea input{
+  float:left;
+  margin-left:20px;
+  border:1px solid black;
+}

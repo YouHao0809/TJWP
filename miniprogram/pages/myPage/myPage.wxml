@@ -1,0 +1,20 @@
+<!--miniprogram/pages/myPage.wxml-->
+<view class="container">
+    <view class="header">
+      <text>同济大学水球队</text>
+      <image src = "../../images/badge.png" mode='widthFix'></image>
+    </view>
+
+    <view class="accountArea">
+      <view>账号</view>
+      <input auto-focus placeholder="输入账号" bindinput="accountInput" value='{{account}}' />
+    </view>
+    <view class="accountArea">
+      <view>密码</view>
+      <input placeholder="输入密码" bindinput="passwordInput" value='{{password}}' />
+    </view>
+
+    <view>
+      <button bindtap="login" >登录</button>
+    </view>
+</view>

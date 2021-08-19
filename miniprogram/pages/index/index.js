@@ -1,142 +1,129 @@
 //index.js
 const app = getApp()
-const { envList } = require('../../envList.js')
 
 Page({
   data: {
-    showUploadTip: false,
-    powerList: [{
-      title: '云函数',
-      tip: '安全、免鉴权运行业务代码',
-      showItem: false,
-      item: [{
-        title: '获取OpenId',
-        page: 'getOpenId'
-      },
-      //  {
-      //   title: '微信支付'
-      // },
-       {
-        title: '生成小程序码',
-        page: 'getMiniProgramCode'
-      },
-      // {
-      //   title: '发送订阅消息',
-      // }
-    ]
-    }, {
-      title: '数据库',
-      tip: '安全稳定的文档型数据库',
-      showItem: false,
-      item: [{
-        title: '创建集合',
-        page: 'createCollection'
-      }, {
-        title: '更新记录',
-        page: 'updateRecord'
-      }, {
-        title: '查询记录',
-        page: 'selectRecord'
-      }, {
-        title: '聚合操作',
-        page: 'sumRecord'
-      }]
-    }, {
-      title: '云存储',
-      tip: '自带CDN加速文件存储',
-      showItem: false,
-      item: [{
-        title: '上传文件',
-        page: 'uploadFile'
-      }]
-    }, {
-      title: '云托管',
-      tip: '不限语言的全托管容器服务',
-      showItem: false,
-      item: [{
-        title: '部署服务',
-        page: 'deployService'
-      }]
-    }],
-    envList,
-    selectedEnv: envList[0],
-    haveCreateCollection: false
+    avatarUrl: './user-unlogin.png',
+    userInfo: {},
+    hasUserInfo: false,
+    logged: false,
+    takeSession: false,
+    requestResult: '',
+    canIUseGetUserProfile: false,
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') // 如需尝试获取用户信息可改为false
   },
 
-  onClickPowerInfo(e) {
-    const index = e.currentTarget.dataset.index
-    const powerList = this.data.powerList
-    powerList[index].showItem = !powerList[index].showItem
-    if (powerList[index].title === '数据库' && !this.data.haveCreateCollection) {
-      this.onClickDatabase(powerList)
-    } else {
-      this.setData({
-        powerList
+  onLoad: function() {
+    if (!wx.cloud) {
+      wx.redirectTo({
+        url: '../chooseLib/chooseLib',
       })
-    }
-  },
-
-  onChangeShowEnvChoose() {
-    wx.showActionSheet({
-      itemList: this.data.envList.map(i => i.alias),
-      success: (res) => {
-        this.onChangeSelectedEnv(res.tapIndex)
-      },
-      fail (res) {
-        console.log(res.errMsg)
-      }
-    })
-  },
-
-  onChangeSelectedEnv(index) {
-    if (this.data.selectedEnv.envId === this.data.envList[index].envId) {
       return
     }
-    const powerList = this.data.powerList
-    powerList.forEach(i => {
-      i.showItem = false
-    })
-    this.setData({
-      selectedEnv: this.data.envList[index],
-      powerList,
-      haveCreateCollection: false
-    })
+    if (wx.getUserProfile) {
+      this.setData({
+        canIUseGetUserProfile: true,
+      })
+    }
   },
 
-  jumpPage(e) {
-    wx.navigateTo({
-      url: `/pages/${e.currentTarget.dataset.page}/index?envId=${this.data.selectedEnv.envId}`,
-    })
-  },
-
-  onClickDatabase(powerList) {
-    wx.showLoading({
-      title: '',
-    })
-    wx.cloud.callFunction({
-      name: 'quickstartFunctions',
-      config: {
-        env: this.data.selectedEnv.envId
-      },
-      data: {
-        type: 'createCollection'
-      }
-    }).then((resp) => {
-      if (resp.result.success) {
+  getUserProfile() {
+    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+    wx.getUserProfile({
+      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
         this.setData({
-          haveCreateCollection: true
+          avatarUrl: res.userInfo.avatarUrl,
+          userInfo: res.userInfo,
+          hasUserInfo: true,
         })
       }
-      this.setData({
-        powerList
-      })
-      wx.hideLoading()
-    }).catch((e) => {
-      console.log(e)
-      this.setData({
-        showUploadTip: true
-      })
-      wx.hideLoading()
     })
-  }
+  },
+
+  onGetUserInfo: function(e) {
+    if (!this.data.logged && e.detail.userInfo) {
+      this.setData({
+        logged: true,
+        avatarUrl: e.detail.userInfo.avatarUrl,
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true,
+      })
+    }
+  },
+
+  onGetOpenid: function() {
+    // 调用云函数
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        console.log('[云函数] [login] user openid: ', res.result.openid)
+        app.globalData.openid = res.result.openid
+        wx.navigateTo({
+          url: '../userConsole/userConsole',
+        })
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
+        wx.navigateTo({
+          url: '../deployFunctions/deployFunctions',
+        })
+      }
+    })
+  },
+
+  // 上传图片
+  doUpload: function () {
+    // 选择图片
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        wx.showLoading({
+          title: '上传中',
+        })
+
+        const filePath = res.tempFilePaths[0]
+        
+        // 上传图片
+        const cloudPath = `my-image${filePath.match(/\.[^.]+?$/)[0]}`
+        wx.cloud.uploadFile({
+          cloudPath,
+          filePath,
+          success: res => {
+            console.log('[上传文件] 成功：', res)
+
+            app.globalData.fileID = res.fileID
+            app.globalData.cloudPath = cloudPath
+            app.globalData.imagePath = filePath
+            
+            wx.navigateTo({
+              url: '../storageConsole/storageConsole'
+            })
+          },
+          fail: e => {
+            console.error('[上传文件] 失败：', e)
+            wx.showToast({
+              icon: 'none',
+              title: '上传失败',
+            })
+          },
+          complete: () => {
+            wx.hideLoading()
+          }
+        })
+      },
+      fail: e => {
+        console.error(e)
+      }
+    })
+  },
+
+  toMypage: function(){
+      wx.navigateTo({
+        url:'../myPage/myPage'
+      })
+  },
 })
