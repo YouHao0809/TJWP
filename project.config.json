@@ -38,7 +38,7 @@
     "minifyWXSS": true
   },
   "appid": "wx8a79ad54edc6df86",
-  "projectname": "piu-test",
+  "projectname": "piu",
   "libVersion": "2.14.1",
   "condition": {
     "search": {

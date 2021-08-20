@@ -26,6 +26,44 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
   },
+  "useExtendedLib": {
+    "weui": true
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+        "text": "TJWP",
+        "iconPath": "images/badge.png",
+        "selectedIconPath": "images/badge.png",
+        "pagePath": "pages/page1/page1"
+      },
+      {
+        "text": "文化墙",
+        "iconPath": "images/badge.png",
+        "selectedIconPath": "images/badge.png",
+        "pagePath": "pages/page2/page2"
+      },
+      {
+        "text": "人事服务",
+        "iconPath": "images/badge.png",
+        "selectedIconPath": "images/badge.png",
+        "pagePath": "pages/page3/page3"
+      }, {
+        "text": "我的",
+        "iconPath": "images/badge.png",
+        "selectedIconPath": "images/badge.png",
+        "pagePath": "pages/page4/page4"
+      }
+    ]
+  },
+
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "usingComponents": {
+
+  }
 }

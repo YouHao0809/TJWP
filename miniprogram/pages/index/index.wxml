@@ -78,5 +78,10 @@
     <button bindtap="toMypage">跳转到自己的页面</button>
   </view>
 
+  <!--mst的页面-->
+  <view class="">
+    <button bindtap="toMSTpage">跳转到mst的测试页面</button>
+  </view>
+
 
 </view>

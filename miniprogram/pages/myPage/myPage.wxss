@@ -14,9 +14,7 @@ page {
   font-style: normal;
   text-shadow: 1rpx 1rpx 1rpx black;
 }
-.header image{
-  
-}
+
 .accountArea {
   margin-top:50px;
 }

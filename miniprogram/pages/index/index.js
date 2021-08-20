@@ -126,4 +126,10 @@ Page({
         url:'../myPage/myPage'
       })
   },
+
+  toMSTpage: function(){
+    wx.switchTab({
+      url:'../page1/page1'
+    })
+},
 })
