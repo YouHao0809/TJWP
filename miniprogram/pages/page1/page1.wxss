@@ -1,9 +1,75 @@
-/* pages/page1/page1.wxss */
-mp-tabbar {
+page {
+  height:120%;
+}
+-mp-tabbar {
   position:fixed;
   bottom:0;
+}
+.upper-section{
   width:100%;
-  left:0;
-  right:0;
-  border: 1px solid black;
+}
+.upper-section swiper{
+  height:400rpx;
+}
+.swipers{
+  height:100%;
+}
+.swipers image{
+  width:100%;
+}
+.sub-title{
+  height:50rpx;
+ 
+}
+.text1{
+  color:cornflowerblue;
+  font-weight: bold;
+  font-size:40rpx;
+  float: left;
+  margin-left:20rpx;
+}
+.more{
+  color:blue;
+  font-weight: bold;
+  font-size:30rpx;
+  float:right;
+  align-items: center;
+  margin-right:20rpx;
+}
+
+.mid-section{
+  margin-top:30rpx;
+}
+.inform{
+  border:1rpx solid black;
+  border-radius:35rpx;
+  width:90%;
+  height:100rpx;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:20rpx;
+}
+
+.last-section {
+  margin-top:30rpx;
+  height:500rpx;
+  overflow:visible;
+}
+.passage{
+  width:90%;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:20rpx;
+  height:150rpx;
+  border:1px solid black;
+ 
+}
+.passages .text{
+  height:100rpx;
+  color:gray;
+  font-weight: bold;
+  font-size:30rpx;
+}
+.passages .text text{
+  float:left;
 }

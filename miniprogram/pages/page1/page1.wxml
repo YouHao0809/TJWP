@@ -1,6 +1,40 @@
-<!--pages/page1/page1.wxml-->
-<text>pages/page1/page1.wxml</text>
+<view class="upper-section">
+  <swiper indicator-dots="true" autoplay="true" circular="true" interval="2000" duration="500">
+
+    <swiper-item class="swipers" wx:for="{{imageURLs}}" wx:key="*this">
+      <image src="../../images/badge.png" mode='widthFix'></image>
+    </swiper-item>
+
+  </swiper>
+</view>
 
 
 
+<view class="mid-section">
+  <view class="sub-title">
+    <text class="text1">近期通知</text>
+    <text class="more" bindtap="clickMore">查看更多</text>
+  </view>
 
+  <view class="informs">
+    <block wx:for="{{informs}}" wx:key="*this" wx:item="item">
+      <view class="inform"></view>
+    </block>
+    
+
+  </view>
+</view>
+
+<view class="last-section">
+  <view class="sub-title">
+    <text class="text1">水什么球系列推送</text>
+    <text class="more">查看更多</text>
+  </view>
+
+  <view class="passages"> 
+    <view class="text"><text>点击跳转至推送页面</text></view>
+    <block wx:for="{{passages}}" wx:key="*this" wx:item="item">
+      <view class="passage"></view>
+    </block>
+  </view>
+</view>

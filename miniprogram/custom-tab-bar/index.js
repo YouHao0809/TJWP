@@ -4,7 +4,7 @@ Component({
     color: "#7A7E83",
     selectedColor: "#3cc51f",
     list: [{
-      pagePath: "pages/page1/page1",
+      pagePath: "/pages/page1/page1",
       iconPath: "/images/badge.png",
       selectedIconPath: "/images/badge.png",
       text: "TJWP"
@@ -32,6 +32,7 @@ Component({
       const url = data.path
       console.log(data.index)
       wx.switchTab({url})
+      //wx.switchTab("/page/page3/page3")
       this.setData({
         selected: data.index
       })
