@@ -1,2 +1,13 @@
 <!--pages/page4/page4.wxml-->
 <text>pages/page4/page4.wxml</text>
+<view class="upper-card">
+  <view class="left-images">
+    <image class="profile" src="{{profile}}"></image>
+    <image class="gender"></image>
+  </view>
+</view>
+<view class="lower-buttons">
+  <button>上传证件照</button>
+  <button>信息修改</button>
+  <button>干事登录</button>
+</view>

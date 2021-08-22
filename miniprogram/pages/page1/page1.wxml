@@ -20,7 +20,7 @@
     <block wx:for="{{informs}}" wx:key="*this" wx:item="item">
       <view class="inform"></view>
     </block>
-    
+
 
   </view>
 </view>
@@ -31,10 +31,19 @@
     <text class="more">查看更多</text>
   </view>
 
-  <view class="passages"> 
-    <view class="text"><text>点击跳转至推送页面</text></view>
+  <view class="passages">
+    <view style="height:80rpx;">
+      <view class="passage-uptext">点击跳转至推送页面</view>
+    </view>
     <block wx:for="{{passages}}" wx:key="*this" wx:item="item">
-      <view class="passage"></view>
+      <view class="passage">
+        <image src="{{item.image}}" mode='heightFix'></image>
+        <view class="passage-textbox">
+          <view class="passage-title">{{item.title}}</view>
+          <view class="passage-subtitle">{{item.subtitle}}</view>
+        </view>
+
+      </view>
     </block>
   </view>
 </view>

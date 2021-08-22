@@ -21,7 +21,22 @@ Component({
        '','','',
      ] ,
      passages:[
-      '','','',
+      {
+        image:"../../images/badge.png",
+        title:"标题一",
+        subtitle:"这是副标题或者简介",
+        url:""
+      }, {
+        image:"../../images/badge.png",
+        title:"标题二",
+        subtitle:"这是副标题或者简介如果长度超过一排会怎么样呢？",
+        url:""
+      }, {
+        image:"../../images/badge.png",
+        title:"标题三",
+        subtitle:"这是副标题或者简介",
+        url:""
+      },
     ] 
   },
   methods: {
