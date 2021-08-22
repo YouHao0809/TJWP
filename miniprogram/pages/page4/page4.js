@@ -13,7 +13,10 @@ Component({
     }
   },
   data:{
-    profile:"../../images/badge.png"
+    profile:"../../images/badge.png",
+    gender:"../../images/badge.png",
+    name:"大琪",
+    campus:"四平路校区"
   },
   methods:{
     

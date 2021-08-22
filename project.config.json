@@ -40,6 +40,7 @@
   "appid": "wx8a79ad54edc6df86",
   "projectname": "piu",
   "libVersion": "2.14.1",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "list": []

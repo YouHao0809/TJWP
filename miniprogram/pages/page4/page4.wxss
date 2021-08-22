@@ -1,1 +1,32 @@
 /* pages/page4/page4.wxss */
+.upper-card{
+  width:90%;
+  margin-left:5%;
+  margin-right:5;
+  border: 1rpx solid black;
+  border-radius:40rpx;
+}
+.left-images{
+  width:350rpx;
+}
+.profile{
+  width:250rpx;
+  margin-top:30rpx;
+  margin-left:30rpx;
+  border-radius:30rpx;
+}
+.gender{
+  width:70rpx;
+  border:1rpx solid black;
+  position: relative;
+  margin-left:-50rpx;
+  margin-bottom:180rpx;
+}
+.right-texts{
+  float:right;
+  width:100rpx;
+}
+.campus{
+  border: 1rpx solid green;
+  background-color: green;
+}
