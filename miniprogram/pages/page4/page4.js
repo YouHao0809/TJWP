@@ -16,7 +16,11 @@ Component({
     profile:"../../images/badge.png",
     gender:"../../images/badge.png",
     name:"大琪",
-    campus:"四平路校区"
+    campus:"四平路校区",
+    chara:"正式队员",
+    time:"2018年09月",
+    num:"066",
+    pos:"守门员"
   },
   methods:{
     

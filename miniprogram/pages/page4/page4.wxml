@@ -1,5 +1,4 @@
 <!--pages/page4/page4.wxml-->
-<text>pages/page4/page4.wxml</text>
 <view class="upper-card">
   <view class="left-images">
     <image class="profile" src="{{profile}}" mode="widthFix"></image>
@@ -8,10 +7,15 @@
   <view class="right-texts">
     <view>
       <view class="name">{{name}}</view>
-      <view class="campus"></view>
+      <view class="campus">{{campus}}</view>
     </view>
 
-    <view class="info"></view>
+    <view class="info">
+      <view>性质：{{chara}}</view>
+      <view>入队时间：{{time}}</view>
+      <view>编号：{{num}}</view>
+      <view>任位：{{pos}}</view>
+    </view>
   </view>
 </view>
 <view class="lower-buttons">
