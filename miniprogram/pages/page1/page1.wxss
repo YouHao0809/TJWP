@@ -1,6 +1,3 @@
-page {
-  height:125%;
-}
 -mp-tabbar {
   position:fixed;
   bottom:0;
@@ -13,6 +10,7 @@ page {
 }
 .swipers{
   height:100%;
+  overflow: hidden;
 }
 .swipers image{
   width:100%;
@@ -52,7 +50,7 @@ page {
 
 .last-section {
   margin-top:30rpx;
-  height:500rpx;
+  height:900rpx;
   overflow:visible;
 }
 .passage-uptext{

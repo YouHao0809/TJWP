@@ -129,7 +129,7 @@ Page({
 
   toMSTpage: function(){
     wx.switchTab({
-      url:'../page4/page4'
+      url:'../page3/page3'
     })
 },
 })

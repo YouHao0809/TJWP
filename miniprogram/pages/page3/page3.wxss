@@ -1,1 +1,35 @@
 /* pages/page3/page3.wxss */
+
+.section{
+  width:650rpx;
+  margin-top:50rpx;
+  margin-left:50rpx;
+  margin-bottom:50rpx;
+  height:150rpx;
+  display: flex;
+}
+.left-sec{
+  width:220rpx;
+  height:120rpx;
+  border-radius:150rpx;
+  background-color: rgb(41, 205, 235);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:0 10rpx 15rpx 5rpx darkgrey;
+}
+.left-sec image{
+  width:30%;
+  border-radius: 50%;
+}
+
+.right-sec{
+  border-top:10rpx dotted rgb(41, 205, 235);
+  color:#728e92;
+  font-weight:bold;
+  font-size:35rpx;
+  width:300rpx;
+  height:50rpx;
+  margin-left:70rpx;
+  margin-top:30rpx;
+}

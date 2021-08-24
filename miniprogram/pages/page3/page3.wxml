@@ -1,2 +1,60 @@
 <!--pages/page3/page3.wxml-->
-<text>pages/page3/page3.wxml</text>
+<view style="height:{{isProper?'1900rpx':''}}">
+  <button bindtap="changeStatus">改变个人身份</button>
+  <view class="section" bindtap="query">
+    <view class="left-sec">
+      <image src="../../images/badge.png" mode="widthFix"></image>
+    </view>
+    <view class="right-sec">考勤&积分查询</view>
+  </view>
+
+  <view class="section" bindtap="activity">
+    <view class="left-sec">
+      <image src="../../images/badge.png" mode="widthFix"></image>
+    </view>
+    <view class="right-sec">定制/活动统计</view>
+  </view>
+
+  <view class="section" bindtap="treehole">
+    <view class="left-sec">
+      <image src="../../images/badge.png" mode="widthFix"></image>
+    </view>
+    <view class="right-sec">小树洞</view>
+  </view>
+
+  <view class="section" wx:if="{{isProper==true}}" bindtap="finance">
+    <view class="left-sec">
+      <image src="../../images/badge.png" mode="widthFix"></image>
+    </view>
+    <view class="right-sec">财务报销</view>
+  </view>
+
+  <view class="section" wx:if="{{isProper==true}}" bindtap="appeal">
+    <view class="left-sec">
+      <image src="../../images/badge.png" mode="widthFix"></image>
+    </view>
+    <view class="right-sec">申诉处</view>
+  </view>
+
+  <view class="section" wx:if="{{isProper==true}}" bindtap="freshman">
+    <view class="left-sec">
+      <image src="../../images/badge.png" mode="widthFix"></image>
+    </view>
+    <view class="right-sec">新队员注册</view>
+  </view>
+
+  <view class="section" wx:if="{{isProper==true}}" bindtap="leave">
+    <view class="left-sec">
+      <image src="../../images/badge.png" mode="widthFix"></image>
+    </view>
+    <view class="right-sec">队员离队/退役</view>
+  </view>
+
+  <view class="section" wx:if="{{isProper==true}}" bindtap="test">
+    <view class="left-sec">
+      <image src="../../images/badge.png" mode="widthFix"></image>
+    </view>
+    <view class="right-sec">体质测试数据</view>
+  </view>
+
+</view>
