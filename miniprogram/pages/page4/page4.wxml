@@ -18,8 +18,14 @@
     </view>
   </view>
 </view>
-<view class="lower-buttons">
+<view class="lower-buttons" wx:if="{{isOfficial==true}}">
   <button>上传证件照</button>
   <button>信息修改</button>
   <button>干事登录</button>
+</view>
+
+<view class="lower-buttons" wx:if="{{isOfficial==false}}">
+  <button>上传证件照</button>
+  <button>信息收集</button>
+  <button>联系当届校友会秘书</button>
 </view>

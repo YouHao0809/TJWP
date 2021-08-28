@@ -25,7 +25,7 @@ Component({
     },
     query:function(){
       wx.navigateTo({
-        url: '../myPage/myPage',
+        url: '../page31query/page31query',
       })
     },
     activity:function(){

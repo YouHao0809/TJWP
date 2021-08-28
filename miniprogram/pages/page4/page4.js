@@ -20,7 +20,8 @@ Component({
     chara:"正式队员",
     time:"2018年09月",
     num:"066",
-    pos:"守门员"
+    pos:"守门员",
+    isOfficial:false,
   },
   methods:{
     
