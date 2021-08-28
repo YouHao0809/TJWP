@@ -4,47 +4,74 @@
   <view class="upper1-switch {{upper1==2?'switch-on':''}}" bindtap="switchUpper1" data-name="2">奖励积分查询</view>
 </view>
 
-<view class="attendance" vx-if="{{upper1==1}}">
+<view class="attendance" wx:if="{{upper1==1}}">
   <view class="attendance-switch-view">
     <view class="attendance-switch switch1 {{upper2==1?'switch-on':''}}" bindtap="switchUpper2" data-name="1">学期考勤查询
     </view>
     <view class="attendance-switch switch2 {{upper2==2?'switch-on':''}}" bindtap="switchUpper2" data-name="2">单次训练考勤查询
     </view>
   </view>
-  <view class="semaster-attendance" vx-if="{{upper2==1}}">
+  <view class="semaster-attendance" wx:if="{{upper2==1}}">
     <view class="semaster-text1">在本学期内，</view>
     <view class="semaster-text2">你的训练次数为</view>
     <image src="../../images/badge.png" mode="widthFix"></image>
     <view class="fixTime">
-    <form action="">
-      
-      <picker bindchange="bindPickerChange" value="{{index1}}" range="{{year}}" data-name="picker1">
-        <view class="picker" id="picker1">
-          {{year[index1]}}
-        </view>
-      </picker>
-      <view>学年   第 </view>  
-      <picker bindchange="bindPickerChange" value="{{index2}}" range="{{semaster}}" data-name="picker2">
-        <view class="picker" id="picker2">
-          {{semaster[index2]}}
-        </view>
-      </picker>
-      <view>学期</view>
-      
-    </form>
+      <form action="">
+
+        <picker bindchange="bindPickerChange" value="{{index1}}" range="{{semaster_year}}" data-name="picker1">
+          <view class="picker" id="picker1">
+            {{semaster_year[index1]}}
+          </view>
+        </picker>
+        <view>学年 第 </view>
+        <picker bindchange="bindPickerChange" value="{{index2}}" range="{{semaster_semaster}}" data-name="picker2">
+          <view class="picker" id="picker2">
+            {{semaster_semaster[index2]}}
+          </view>
+        </picker>
+        <view>学期</view>
+
+      </form>
       
     </view>
+    <button>查询</button>
   </view>
 
-  <view class="single-attendance" vx-if="{{upper2==2}}">
-    <view>在本学期内，</view>
-    <view>你的训练次数为</view>
-    <image src="../../images/badge.png" mode="widthFix"></image>
-    <view></view>
+  <view class="single-attendance" wx:if="{{upper2==2}}">
+    <view class="form">
+      <form action="">
+        <picker bindchange="bindPickerChange" value="{{index1}}" range="{{semaster_year}}" data-name="picker1">
+          <view class="picker" id="picker1">
+            {{semaster_year[index1]}}
+          </view>
+        </picker>
+        <view>学年 第 </view>
+        <picker bindchange="bindPickerChange" value="{{index2}}" range="{{semaster_semaster}}" data-name="picker2">
+          <view class="picker" id="picker2">
+            {{semaster_semaster[index2]}}
+          </view>
+        </picker>
+        <view>学期</view>
+
+        <view class="week">
+          <view>第</view>
+          <picker bindchange="bindPickerChange" value="{{index3}}" range="{{week}}" data-name="picker3">
+            <view class="picker" id="picker3">
+              {{week[index3]}}
+            </view>
+          </picker>
+          <view>周</view>
+        </view>
+
+      </form>
+    </view>
+    <button>查询</button>
+    <view class="single-result">{{SingleResult}}</view>
   </view>
-  1111111111111
 </view>
 
-<view class="reward" vx-if="{{upper1==2}}">
-  22222222222
+<view class="reward" wx:if="{{upper1==2}}">
+  <view class="reward-button">
+    {{reward_button_text}}
+  </view>
 </view>

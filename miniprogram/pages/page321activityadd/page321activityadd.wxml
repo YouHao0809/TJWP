@@ -1,0 +1,40 @@
+<!--pages/page321activityadd/page321activityadd.wxml-->
+<text>pages/page321activityadd/page321activityadd.wxml</text>
+<view>
+  <form action="">
+    <view class="bar type">
+      <view>选择活动类型：</view>
+      <picker bindchange="bindPickerChange" value="{{index1}}" range="{{activity_type}}" data-name="picker1">
+        <view class="picker" id="picker1">
+          {{activity_type[index1]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="bar name">
+      <input type="text" auto-focus placeholder="请输入活动名称" />
+    </view>
+
+    <view class="bar date">
+      <picker mode="date" value="{{date}}" start="2021-09-01" end="2022-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          选择日期: {{date}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="bar time">
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+        <view class="picker">
+          选择时间: {{time}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="bar detail">
+      <input type="text" placeholder="请输入活动简介" />
+    </view>
+
+  </form>
+  <button class="submit">确认创建</button>
+</view>

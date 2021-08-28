@@ -1,0 +1,17 @@
+<!--pages/page32activity/page32activity.wxml-->
+<view>
+  <view wx:for="{{activities}}" wx:key="*this" wx:item="item" class="activity">
+    <view class="left-status">
+      <icon class="icon-box-img" type="{{item.iconType}}" size="90"></icon></view>
+
+    <view class="right-info">
+      <view class="activity-name">{{item.name}}</view>
+      <view class="activity-detail">{{item.detail}}</view>
+      <view class="activity-creater">创建者:{{item.creater}}</view>
+      <view class="activity-restTime">距离结束还有：{{item.restTime}}</view>
+    </view>
+  </view>
+  <view class="add">
+    <icon class="icon-box-img" type="download" size="50" bindtap="addActivity"></icon>
+   </view>
+</view>

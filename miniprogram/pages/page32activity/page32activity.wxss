@@ -1,0 +1,47 @@
+/* pages/page32activity/page32activity.wxss */
+.activity{
+  width:92%;
+  height:300rpx;
+  border-radius:30rpx;
+  margin-left:4%;
+  box-shadow: 0rpx 0 15rpx 15rpx gray; 
+  margin-top:80rpx;
+  display: flex;
+}
+.activity .left-status{
+  height:80%;
+  margin-top:5%;
+  width:30%;
+  border-right: 10rpx solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.activity .right-info{
+  margin-left:50rpx;
+  height:80%;
+  margin-top:5%;
+  align-items: center;
+  justify-content: center;
+}
+.activity-name {
+  font-size: 60rpx;
+}
+.activity-detail {
+  margin-top:20rpx;
+  font-size: 25rpx;
+  font-weight: bold;
+}
+.activity-creater {
+  margin-top:20rpx;
+  font-size: 25rpx;
+}
+.activity-restTime{
+  font-size:25rpx;
+  margin-left:150rpx;
+}
+.add{
+  position: fixed;
+  bottom:100rpx;
+  right:50rpx;
+}

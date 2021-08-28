@@ -18,7 +18,9 @@
     "pages/page2/page2",
     "pages/page3/page3",
     "pages/page4/page4",
-    "pages/page31query/page31query"
+    "pages/page31query/page31query",
+    "pages/page32activity/page32activity",
+    "pages/page321activityadd/page321activityadd"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

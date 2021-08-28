@@ -128,11 +128,11 @@ Page({
   },
 
   toMSTpage: function(){
-    /*wx.switchTab({
-      url:'../page31query/page31query'
+   /* wx.switchTab({
+      url:'../page3/page3'
     })*/
     wx.navigateTo({
-      url:'../page31query/page31query'
+      url:'../page32activity/page32activity'
     })
 },
 })

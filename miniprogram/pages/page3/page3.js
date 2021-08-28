@@ -30,7 +30,7 @@ Component({
     },
     activity:function(){
       wx.navigateTo({
-        url: '../myPage/myPage',
+        url: '../page32activity/page32activity',
       })
     },
     treehole:function(){

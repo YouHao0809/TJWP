@@ -6,11 +6,16 @@ Page({
    */ 
   data: {
    upper1: 1,
+   isupper1:true,
    upper2: 1,
    index1:0,
    index2:0,
-   year: ['2017-2018', '2018-2019', '2019-2020', '2020-2021','2021-2022'],
-   semaster:['一','二']
+   index3:0,
+   semaster_year: ['2017-2018', '2018-2019', '2019-2020', '2020-2021','2021-2022'],
+   semaster_semaster:['一','二'],
+   week:['一','二','三','四','五','六','七','八','九','十','十一','十二','十三','十四','十五','十六','十七','十八'],
+   SingleResult:"已出勤!",
+   reward_button_text:"查询"
   },
  switchUpper1:function(e){
     console.log(this.data.upper1);
@@ -37,9 +42,14 @@ bindPickerChange: function (e) {
       index1: e.detail.value
     })
   }
-  else{
+  else if(e.target.dataset.name=="picker2"){
     this.setData({
       index2: e.detail.value
+    })
+  }
+  else{
+    this.setData({
+      index3: e.detail.value
     })
   }
   

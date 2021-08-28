@@ -1,0 +1,78 @@
+/* pages/page321activityadd/page321activityadd.wxss */
+.bar{
+  width:92%;
+  margin-left:4%;
+  margin-top:50rpx;
+  height:80rpx;
+  border-radius:40rpx;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.type{
+  background-color: #56b0ec;
+}
+.picker {
+  border-bottom: 1rpx solid gray;
+  height:60rpx;
+  padding-left:10rpx;
+  padding-right:10rpx;
+  background-color: white;
+  border-radius:40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name{
+  background-color: #94cff7;
+}
+.name input{
+  height:60rpx;
+  background-color: white;
+  width:70%;
+  padding-left:20rpx;
+  border-radius:30rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.date{
+  background-color: #56b0ec;
+}
+.date picker{
+  width:70%;
+  padding-left:20rpx;
+  padding-right:20rpx;
+}
+.time{
+  background-color: #94cff7;
+}
+.time picker{
+  width:70%;
+  padding-left:20rpx;
+  padding-right:20rpx;
+}
+.detail{
+  background-color: #94cff7;
+}
+.detail input{
+  height:60rpx;
+  background-color: white;
+  width:70%;
+  padding-left:20rpx;
+  border-radius:30rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.submit{
+  margin-top:50rpx;
+  width:200rpx !important;
+  height:200rpx;
+  border-radius:100rpx;
+  border:2rpx solid blue;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
