@@ -1,5 +1,4 @@
 <!--pages/page321activityadd/page321activityadd.wxml-->
-<text>pages/page321activityadd/page321activityadd.wxml</text>
 <view>
   <form action="">
     <view class="bar type">

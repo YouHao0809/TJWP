@@ -35,7 +35,7 @@ Component({
     },
     treehole:function(){
       wx.navigateTo({
-        url: '../myPage/myPage',
+        url: '../page33treehole/page33treehole',
       })
     },
     finance:function(){

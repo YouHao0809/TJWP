@@ -1,0 +1,21 @@
+<!--pages/page33treehole/page33treehole.wxml-->
+<view class="system-talk">
+  <image src="../../images/badge.png"></image>
+  <view class="triangle"></view>
+  <view class="text">嗨！亲爱的天线宝宝！</view>
+</view>
+
+<view class="system-talk">
+  <image src="../../images/badge.png"></image>
+  <view class="triangle"></view>
+  <view class="text">有什么悄悄话想对我说吗？</view>
+</view>
+
+
+<view class="user-talk">
+  <view class="text"><textarea bindblur="bindTextAreaBlur" auto-focus placeholder="写下你想说的话吧" /></view>
+
+  <image src="../../images/badge.png"></image>
+</view>
+
+<button class="submit">提交</button>
